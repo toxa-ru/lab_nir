@@ -15,6 +15,40 @@
 
 #### Описание
 
+Хранение категорий
+
+#### Структура таблицы:
+
+```
+CREATE TABLE IF NOT EXISTS labs.categories (
+    // id категории
+    id uuid PRIMARY KEY,
+
+    // название категории
+    name text,
+
+    // описание категории
+    description text
+);
+```
+
+#### Запросы в рамках данного кейса
+
+1. Создание категории
+
+    ```
+    INSERT INTO labs.categories (id, name, description)
+    VALUES (14bd2cc7-1cee-4aca-b8d3-01999b548608, 'person', 'person');
+    ```
+
+2. Получить список всех категорий
+    ```
+    SELECT id, name, description FROM labs.categories;
+    ```
+
+### Кейс 2
+#### Описание
+
 Хранение датасета.
 
 #### Структура таблицы:
@@ -96,41 +130,6 @@ CREATE TYPE IF NOT EXISTS labs.bbox (
 4. Получить конкретное изображение по его id
     ```
     SELECT * FROM labs.images WHERE id=48a97e31-d244-4bb7-9f30-302b1880dea3;
-    ```
-
-### Кейс 2
-
-#### Описание
-
-Хранение категорий
-
-#### Структура таблицы:
-
-```
-CREATE TABLE IF NOT EXISTS labs.categories (
-    // id категории
-    id uuid PRIMARY KEY,
-
-    // название категории
-    name text,
-
-    // описание категории
-    description text
-);
-```
-
-#### Запросы в рамках данного кейса
-
-1. Создание категории
-
-    ```
-    INSERT INTO labs.categories (id, name, description)
-    VALUES (14bd2cc7-1cee-4aca-b8d3-01999b548608, 'person', 'person');
-    ```
-
-2. Получить список всех категорий
-    ```
-    SELECT id, name, description FROM labs.categories;
     ```
 
 ### Кейс 3
